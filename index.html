@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en-us">
+
+
+<head>
+
+    <meta charset="utf-8">
+    <link rel="icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta property="og:title" content="RoyalBNB">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://royalbnb.cloud">
+    <meta property="og:image" content="https://royalbnb.cloud/img/banner.png">
+    <meta property="og:description" content="Stake & Earn up to 17% daily!">
+    <style>
+        body:not(.loaded) {
+            visibility: hidden
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&amp;family=Source+Sans+Pro:wght@300;400;700;900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles0b0d0b0d.css?v=11272021">
+    <title>RoyalBNB</title>
+</head>
+
+<body>
+
+    <div id="root">
+
+        <div class="header">
+            <div class="wrapped">
+                <img src="img/hero-icon.png" @click="goHome">
+                <h1 @click="goHome">Royal<span>BNB</span></h1>
+                <button @click="connectWallet">{{user.address==""?"connect wallet":cleanText(user.address)}}</button>
+            </div>
+        </div>
+        <div class="header" v-if="current_time < launch_date">
+            <div class="wrapped">
+                <h1>Launching in: {{time_left.hours}}h {{time_left.minutes}}m {{time_left.seconds}}s</h1>
+            </div>
+        </div>
+        <div class="content">
+            <div class="wrapped">
+                <div><br><br>
+                    <h1><b>Newest BSC Yield Farming Dapp with Sustainble Features </b></h1><br>
+                    <h1>STAKE AND EARN!</h1>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="wrapped">
+                <div class="side">
+                    <div class="links">
+                        <!-- <a href="https://hazecrypto.net/audit/BinanceStake-Finance" target="_blank">audit report</a>--><br>
+                        <!--<a href="#" target="_blank">verified contract</a>-->
+                        <br>
+                        <a href="./docs" target="_blank">White Paper</a><br>
+                        <a href="https://t.me/officialroyalbnb" target="_blank">Community</a><br>
+                    </div>
+                    <div class="inverted">
+                        <sub>BNB POOL VOLUME</sub>
+                        <div bnb>{{format(dapp.totalInvested)}}</div>
+                        <sub>$ {{format(dapp.totalInvested*config.price.price,2)}}</sub>
+                    </div>
+
+                    <div class="whale">
+                        <h2><b>SUSTAINABLE FEATURES</b></h2>
+                        <p>
+                            <b>• Withdraw every 24 hours<br><br>
+						• 5 BNB Maximum on every Withdrawal<br><br>
+						• 20% Auto-Redeposit on every Withdrawal as Community Fund for Sustainability of the Contract</b>
+                        </p>
+                    </div>
+                    <div class="">
+                        <sub>LIVE ON:</sub>
+                        <div>{{formatDate(_launch_date)}}</div>
+                    </div>
+                    <div class="footer">
+                        royalbnb.cloud &copy; 2023
+                    </div>
+                </div>
+                <div class="main">
+                    <div>
+
+                        <h1>BNB POOL</h1>
+                        <div class="planlist">
+                            <div>
+                                <input type="radio" name="planpick" id="plan1" value="0" v-model="val.plan" v-bind:checked="val.plan==0">
+                                <label for="plan1">
+							     <h4>Plan 1</h4>
+                                <div>
+                                    <div>
+                                        <div>Days</div><div>10</div>
+                                    </div>
+                                    <div>
+                                        <div>Daily</div><div>17%</div>
+                                    </div>
+                                    <div>
+                                        <div>ROI</div><div>170%</div>
+                                    </div>
+                                </div>
+                            </label>
+                                <input type="radio" name="planpick" id="plan2" value="1" v-model="val.plan" v-bind:checked="val.plan==1">
+                                <label for="plan2">
+                                <h4>Plan 2</h4>
+                                <div>
+                                    <div>
+                                        <div>Days</div><div>20</div>
+                                    </div>
+                                    <div>
+                                        <div>Daily</div><div>15%</div>
+                                    </div>
+                                    <div>
+                                        <div>ROI</div><div>300%</div>
+                                    </div>
+                                </div>
+                            </label>
+                            </div>
+                        </div>
+
+                        <div class="form">
+                            <p>Minimum: <span bnb>0.05</span></p>
+                            <input type="number" placeholder="1 BNB" v-model="val.invest">
+                            <button @click="invest_bnb">stake</button>
+                        </div>
+                    </div>
+
+                    <div class="account inverted">
+                        <h2><b>USER DASHBOARD</b></h2>
+                        <!--sub>Wallet: {{cleanText(user.address)}}</sub-->
+                        <div>
+                            <div>
+                                <div>wallet balance:</div>
+                                <div bnb>{{format(user.balance, 4)}}</div>
+                                <sub>$ {{format(user.balance*config.price.price,2)}}</sub>
+                            </div>
+                        </div>
+                        <hr>
+                        <div>
+                            <div>
+                                <div>bnb to claim</div>
+                                <div bnb>{{format(user.available, 8)}}</div>
+                                <sub>$ {{format(user.available*config.price.price,2)}}</sub>
+                                <button @click="withdraw" :class="{disabled:current_time<user.checkpoint+constants.WITHDRAW_COOLDOWN}">claim</button>
+                                <div style="margin-top: 5px" v-if="user.checkpoint > 0 && current_time < user.checkpoint + constants.WITHDRAW_COOLDOWN">Available in {{countdown(user.checkpoint+constants.WITHDRAW_COOLDOWN, 1)}}</div>
+                            </div>
+                            <div>
+                                <div>total staked</div>
+                                <div bnb>{{format(user.invested, 2)}}</div>
+                                <sub>$ {{format(user.invested*config.price.price,2)}}</sub>
+                                <button tabindex=4 @click="overlay.history=1">history</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2><b>AFFILIATE REWARD</b></h2>
+                        <sub>Get bonus by inviting people to (Under Development).<br> 
+					Deposit atleast once to activate Referral Rewards </sub>
+                        <br>
+                        <br>
+                        <div class="reflist">
+                            <div>
+                                <div>level 1</div>
+                                <div>5%</div>
+                            </div>
+                            <div>
+                                <div>level 2</div>
+                                <div>3%</div>
+                            </div>
+                            <div>
+                                <div>level 3</div>
+                                <div>2%</div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="refinfo">
+                            <div>
+                                <div>Referral rewards</div>
+                                <div bnb>{{format(user.bonus, 4)}}</div>
+                                <sub>$ {{format(user.bonus*config.price.price,2)}}</sub>
+                            </div>
+                        </div>
+                        <div class="reflink">
+                            <p>Your Referral Link:</p>
+                            <div>https://royalbnb.cloud/?ref={{user.address}}</div>
+                            <button @click="copyRef">copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ads">
+            <div class="wrapped">
+                <a href="#" target="_blank">
+                    <img src="img/bsc.png">
+                </a>
+
+            </div>
+        </div>
+
+
+        <div class="loader overlay" v-bind:class="{active:overlay.invest}">
+            <div>
+                <h6>Staking</h6>
+                <img src="img/hero-icon.png">
+            </div>
+        </div>
+
+        <div class="loader overlay" v-bind:class="{active:overlay.collect}">
+            <div>
+                <h6>Claiming</h6>
+                <img src="img/hero-icon.png">
+            </div>
+        </div>
+
+        <div class="history overlay" v-bind:class="{active:overlay.history}" @click="overlay.history=0">
+            <div v-on:click.stop>
+                <span class="btn-close" @click="overlay.history=0"><svg viewBox="0 0 24 24" width="24" height="24" style="fill: currentcolor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.293 6.293a1 1 0 011.414 0L12 10.586l4.293-4.293a1 1 0 111.414 1.414L13.414 12l4.293 4.293a1 1 0 01-1.414 1.414L12 13.414l-4.293 4.293a1 1 0 01-1.414-1.414L10.586 12 6.293 7.707a1 1 0 010-1.414z" fill=""></path></svg></span>
+                <h4>History</h4>
+                <div>
+                    <div>
+                        <div>Date</div>
+                        <div>Plan</div>
+                        <div>Amount</div>
+                    </div>
+                    <div v-for="dep, index in user.deposits.slice().reverse()">
+                        <div>{{formatDate(dep.start)}}</div>
+                        <div>{{parseInt(dep.plan) + 1}}</div>
+                        <div>{{format(parseWei(dep.amount))}} BNB</div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div>Total Staked</div>
+                        <div>Total Withdrawn</div>
+                        <div>Total Referrals</div>
+                    </div>
+                    <div>
+                        <div>{{format(user.invested)}} BNB</div>
+                        <div>{{format(user.withdrawn)}} BNB</div>
+                        <div>{{format(user.totalBonus)}} BNB</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loader overlay" v-bind:class="{active:overlay.historyLoad}">
+            <div>
+                <img src="img/hero-icon.png">
+            </div>
+        </div>
+
+        <div class="loader overlay copy" v-bind:class="{active:overlay.copied}" @click="overlay.copied=0">
+            <div>
+                <h6>Link Copied</h6>
+                <img src="img/check.png" style="animation: none">
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="js/abi.contract.bnb.js"></script>
+    <script src="js/abi.contract.busd.js"></script>
+    <script src="js/abi.contract.busd2.js"></script>
+    <script src="js/abi.contract.cake.js"></script>
+    <script src="js/abi.token.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/web3m.min.js"></script>
+    <script src="js/evm.min.js"></script>
+    <script src="js/walletconnect.min.js"></script>
+    <script type="text/javascript">
+        var _farm = "bnb";
+        var _min_invest = 0.05;
+        var _withdraw_cooldown = 24 * 60 * 60000;
+        var _launch_date = 1687401600; /* 01 19 2022 2PM GMT */
+    </script>
+    <script src="js/app08270827.js?v=11272021_5"></script>
+
+</body>
+
+
+
+</html>
