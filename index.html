@@ -125,7 +125,7 @@
                         </div>
 
                         <div class="form">
-                            <p>Minimum: <span bnb>0.05</span></p>
+                            <p>Minimum: <span bnb>0.01</span></p>
                             <input type="number" placeholder="1 BNB" v-model="val.invest">
                             <button @click="invest_bnb">stake</button>
                         </div>
@@ -282,7 +282,7 @@
     <script src="js/walletconnect.min.js"></script>
     <script type="text/javascript">
         var _farm = "bnb";
-        var _min_invest = 0.05;
+        var _min_invest = 0.01;
         var _withdraw_cooldown = 24 * 60 * 60000;
         var _launch_date = 1687401600; /* 01 19 2022 2PM GMT */
     </script>
