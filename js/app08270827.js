@@ -126,7 +126,7 @@
                             })(i);
                         }
                     });
-                } else { document.title = "binancestake"; }
+                } else { document.title = "RoyalBNB"; }
             },
         },
         methods: {
