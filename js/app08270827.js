@@ -112,7 +112,7 @@
                 if (self.user.address == "") return;
                 if (val == 1) {
                     self.overlay.historyLoad = 1;
-                    document.title = "binancestake / History";
+                    document.title = "RoyalBNB / History";
                     self.contract.methods.getUserAmountOfDeposits(self.user.address).call().then(depLength => {
                         console.log(depLength);
                         if (parseInt(depLength) <= 0) return self.overlay.historyLoad = 0;
@@ -578,13 +578,13 @@
                 let amount = parseFloat(self.user.available);
                 if (self.conn != "" && self.user.address != "") {
                     self.overlay.collect = 1;
-                    document.title = "binancestake / Claiming";
+                    document.title = "RoyalBNB / Claiming";
                     self.contract.methods.withdraw().send({ from: self.user.address }).then(res => {
-                        document.title = "binancestake";
+                        document.title = "RoyalBNB";
                         self.overlay.collect = 0;
                         self.updateData();
                     }).catch(e => {
-                        document.title = "binancestake";
+                        document.title = "RoyalBNB";
                         self.overlay.collect = 0;
                     });
                 } else { console.log("Please connect to wallet!"); }
@@ -595,13 +595,13 @@
                 self.overlay.prompt1 = 0;
                 if (self.conn != "" && self.user.address != "") {
                     self.overlay.unstake = 1;
-                    document.title = "binancestake / Claiming";
+                    document.title = "RoyalBNB / Claiming";
                     self.contract.methods.unstake().send({ from: self.user.address }).then(res => {
-                        document.title = "binancestake";
+                        document.title = "RoyalBNB";
                         self.overlay.unstake = 0;
                         self.updateData();
                     }).catch(e => {
-                        document.title = "binancestake";
+                        document.title = "RoyalBNB";
                         self.overlay.unstake = 0;
                     });
                 } else { console.log("Please connect to wallet!"); }
