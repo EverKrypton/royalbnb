@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en-us">
+
+
+
+<head>
+    <base>
+    <meta charset="utf-8">
+    <link rel="icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta property="og:title" content="Royal BNB Stake">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="index.html">
+    <meta property="og:image" content="img/banner.html">
+    <meta property="og:description" content="Stake & Earn BNB up to 17% daily!">
+    <style>
+        body:not(.loaded) {
+            visibility: hidden
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&amp;family=Source+Sans+Pro:wght@300;400;700;900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles0b0d065b.css?v=11212021">
+    <title>RoyalBNB</title>
+    <script>
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="root">
+
+        <div class="header">
+            <div class="wrapped">
+                <img src="img/hero-icon.png" @click="goHome">
+                <h1 @click="goHome">Royal<span>BNB</span></h1>
+                <button @click="goHome">back to homepage</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="wrapped">
+                <div class="side">
+                    <div class="doc links">
+                        <button @click="openDoc1" :class="{active:docs.overview}">Platform Overview</button>
+                        <button @click="openDoc2" :class="{active:docs.antiwhale}">Sustainable Features</button>
+                        <button @click="openDoc4" :class="{active:docs.guide}">Staking and Referrals</button>
+                        <button @click="openDoc5" :class="{active:docs.dist}">Distribution</button>
+                    </div>
+
+                    <div class="footer">
+                        royalbnb.cloud &copy; 2023
+                    </div>
+                </div>
+                <div class="main">
+                    <div class="docs" v-bind:class="{active:docs.overview}">
+                        <br><br>
+                        <h2>Welcome to <b>RoyalBNB</b>!</h2>
+                        <hr>
+                        <p>RoyalBNB is the newest staking platform powered by Binance Smart Chain.</p>
+                        <p>RoyalBNB is built with Sustainable Features to create a stable and sustainable platform.<br></p>
+                        <p>Earn up to 17% daily Staking rewards and 10% Referral rewards.</p><br>
+                        <p>OFFICIAL LAUNCHING DATE: 18 JUN 2023 AT 23:38:40 local time</p>
+                        <hr>
+                    </div>
+                    <div class="docs" v-bind:class="{active:docs.antiwhale}">
+                        <p>RoyalBNB is built with Sustainable Features that will protect the investments of the investors.</p>
+                        <p>This makes RoyalBNB different from other Staking Platforms.</p>
+
+
+                        <p><b>Anti-whale and Anti-dump</b></p>
+                        Withdrawal Cooldown: 24 Hours <br> Maximum per Withdraw: 5 BNB<br>
+
+                        <b>20% Community Fund Contribution:</b><br> Every withdrawal will auto-redeposit 20% of the withdrawal amount back to the contract.
+                        <br>This will help the contract balance to sustain for a long time.
+                        <br>
+                    </div>
+                    <div class="docs" v-bind:class="{active:docs.audits}">
+                        <p>Binance Stake is a Verified Open Source Smart Conract on Binance SmartChain Network.</p>
+                        <p>Binance Stake will be audited by Haze Crypto,a private auditing company.</p>
+                        <hr>
+                        <p><a href="#" target="_blank">On going audit by HazeCrypto</a></p>
+                        <p><a href="https://bscscan.com/address/0xea90e1e86257ecb1eee0a8300a53b7ed390c5d18#code" target="_blank">Verified Open-source Contract</a></p>
+                        <hr>
+                    </div>
+                    <div class="docs" v-bind:class="{active:docs.guide}">
+
+                        <h5>Staking Plans</h5>
+                        <p>Plan 1: 17% Daily for 10 days with a total ROI of 170%</p>
+                        <p>Plan 2: 15% Daily for 20 days with a total ROI of 300%</p>
+                        <hr>
+                        <h5>Referrals</h5>
+                        <p>Users also have the option to market RoyalBNB and earn referral bonuses.</p>
+                        <p>Referral bonuses are automatically added to your RoyalBNB Account.</p>
+                        <p>Referral bonuses can be <u>earned</u> once you have <u>invested atleast once</u>.</p>
+                        <p>Referral bonuses are earned <u>everytime your referral invests</u>.</p>
+                        <p>Direct referrals are on <b>Level 1 at 5%</b>.</p>
+                        <p>Secondary referrals are on <b>Level 2 at 3%</b>.</p>
+                        <p>Tertiary referrals are on <b>Level 3 at 2%</b>.</p>
+                        <br>
+                        <h5>HOW TO STAKE</h5>
+                        <hr>
+                        <p>1. Fund your wallet with the amount of BNB(s) you would like to stake.</p>
+                        <p>2. Go to to https://royalbnb.cloud/</p>
+                        <p>3. Click Connect on the upper right-hand corner of the page.</p>
+                        <p>4. Choose from the 2 staking plans which interest you.</p>
+                        <p>5. Input the amount of BNB(s) you want to invest.</p>
+                        <p>6. Click "Stake"</p>
+                    </div>
+                    <div class="docs" v-bind:class="{active:docs.dist}">
+                        <h2>Funds Distribution</h2>
+                        <p>In order for the community to increase in growth, the following is a break-down of funds:</p>
+                        <hr>
+                        <h5>RoyalBNB</h5>
+                        <p>90% Circulating balance, used for participants payouts, referral bonuses</p>
+                        <p>10% Promotion &amp; Support Work</p>
+                        <p> &middot; 2% Development, Platform, Technical Fees</p>
+                        <p> &middot; 2% Administration &amp; Support Work</p>
+                        <p> &middot; 6% Marketing &amp; Promotions</p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="js/vue.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/web3m.min.js"></script>
+    <script src="js/evm.min.js"></script>
+    <script src="js/walletconnect.min.js"></script>
+    <script src="js/app0827065b.js?v=11212021"></script>
+
+
+</body>
+
+
+
+</html>
