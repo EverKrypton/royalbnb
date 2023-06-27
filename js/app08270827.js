@@ -459,11 +459,11 @@
                 self.overlay.invest = 1;
                 document.title = "royalbnb / Staking";
                 self.contract.methods.invest(self.user.ref, self.val.plan).send({ from: self.user.address, value: self.toWei(amt + "") }).then(res => {
-                    document.title = "binancestake";
+                    document.title = "royalbnb";
                     self.overlay.invest = 0;
                     self.updateData();
                 }).catch(e => {
-                    document.title = "binancestake";
+                    document.title = "royalbnb";
                     self.overlay.invest = 0;
                 });
             },
@@ -483,11 +483,11 @@
                     self.overlay.invest = 1;
                     document.title = "royalbnb / Staking";
                     self.contract.methods.invest(self.user.ref, self.val.plan, self.toWei(amt + "")).send({ from: self.user.address }).then(res => {
-                        document.title = "binancestake";
+                        document.title = "royalbnb";
                         self.overlay.invest = 0;
                         self.updateData();
                     }).catch(e => {
-                        document.title = "binancestake";
+                        document.title = "royalbnb";
                         self.overlay.invest = 0;
                     });
                 }
@@ -511,7 +511,7 @@
                         self.overlay.invest = 0;
                         self.updateData();
                     }).catch(e => {
-                        document.title = "binancestake";
+                        document.title = "royalbnb";
                         self.overlay.invest = 0;
                     });
                 }
@@ -535,7 +535,7 @@
                         self.overlay.liquidity = 0;
                         self.updateData();
                     }).catch(e => {
-                        document.title = "binancestake";
+                        document.title = "royalbnb";
                         self.overlay.liquidity = 0;
                     });
                 }
