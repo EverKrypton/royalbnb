@@ -395,23 +395,23 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             },
             openDoc1() {
-                document.title = "binancestake / Docs / Overview";
+                document.title = "royalbnb / Docs / Overview";
                 this.openDoc("overview");
             },
             openDoc2() {
-                document.title = "binancestake / Docs / Feature: Anti-Whale";
+                document.title = "royalbnb / Docs / Feature: Anti-Whale";
                 this.openDoc("antiwhale");
             },
             openDoc3() {
-                document.title = "binancestake / Docs / Audits";
+                document.title = "royalbnb / Docs / Audits";
                 this.openDoc("audits");
             },
             openDoc4() {
-                document.title = "binancestake / Docs / Quick Guide";
+                document.title = "royalbnb / Docs / Quick Guide";
                 this.openDoc("guide");
             },
             openDoc5() {
-                document.title = "binancestake / Docs / Distribution";
+                document.title = "royalbnb / Docs / Distribution";
                 this.openDoc("dist");
             },
             copyRef() {
@@ -435,10 +435,10 @@
                     document.execCommand('copy');
                     self.notify("Copied to clipboard", _lnk);
                     self.overlay.copied = 1;
-                    document.title = "binancestake / Ref Copied!";
+                    document.title = "royalbnb / Ref Copied!";
                     setTimeout(() => {
                         self.overlay.copied = 0;
-                        document.title = "binancestake";
+                        document.title = "royalbnb";
                     }, 1800);
                 } catch (e) {};
                 s.remove();
@@ -457,7 +457,7 @@
                 if (self.user.address == "" || amt < self.constants.MIN_INVEST) return;
                 if (self.val.plan < 0 || self.val.plan > 3) return self.val.plan = 0;
                 self.overlay.invest = 1;
-                document.title = "binancestake / Staking";
+                document.title = "royalbnb / Staking";
                 self.contract.methods.invest(self.user.ref, self.val.plan).send({ from: self.user.address, value: self.toWei(amt + "") }).then(res => {
                     document.title = "binancestake";
                     self.overlay.invest = 0;
@@ -481,7 +481,7 @@
                 } else {
                     if (self.val.plan < 0 || self.val.plan > 3) return self.val.plan = 0;
                     self.overlay.invest = 1;
-                    document.title = "binancestake / Staking";
+                    document.title = "royalbnb / Staking";
                     self.contract.methods.invest(self.user.ref, self.val.plan, self.toWei(amt + "")).send({ from: self.user.address }).then(res => {
                         document.title = "binancestake";
                         self.overlay.invest = 0;
@@ -505,9 +505,9 @@
                     }).catch(e => { self.overlay.approve = 0; });
                 } else {
                     self.overlay.invest = 1;
-                    document.title = "binancestake / Staking";
+                    document.title = "royalbnb / Staking";
                     self.contract.methods.invest(self.user.ref, "0", self.toWei(amt + "")).send({ from: self.user.address }).then(res => {
-                        document.title = "binancestake";
+                        document.title = "royalbnb";
                         self.overlay.invest = 0;
                         self.updateData();
                     }).catch(e => {
@@ -529,9 +529,9 @@
                     }).catch(e => { self.overlay.approve = 0; });
                 } else {
                     self.overlay.liquidity = 1;
-                    document.title = "binancestake / Add Liquidity";
+                    document.title = "royalbnb / Add Liquidity";
                     self.contract.methods.invest(self.user.ref, "1", self.toWei(amt + "")).send({ from: self.user.address }).then(res => {
-                        document.title = "binancestake";
+                        document.title = "royalbnb";
                         self.overlay.liquidity = 0;
                         self.updateData();
                     }).catch(e => {
@@ -545,13 +545,13 @@
                 let amount = parseFloat(self.user.available);
                 if (self.conn != "" && self.user.address != "") {
                     self.overlay.collect = 1;
-                    document.title = "binancestake / Claiming";
+                    document.title = "royalbnb / Claiming";
                     self.contract.methods.withdraw_referral().send({ from: self.user.address }).then(res => {
-                        document.title = "binancestake";
+                        document.title = "royalbnb";
                         self.overlay.collect = 0;
                         self.updateData();
                     }).catch(e => {
-                        document.title = "binancestake";
+                        document.title = "royalbnb";
                         self.overlay.collect = 0;
                     });
                 } else { console.log("Please connect to wallet!"); }
@@ -562,13 +562,13 @@
                 self.overlay.prompt2 = 0;
                 if (self.conn != "" && self.user.address != "") {
                     self.overlay.remove = 1;
-                    document.title = "binancestake / Removing Liquidity";
+                    document.title = "royalbnb / Removing Liquidity";
                     self.contract.methods.unstakePool().send({ from: self.user.address }).then(res => {
-                        document.title = "binancestake";
+                        document.title = "royalbnb";
                         self.overlay.remove = 0;
                         self.updateData();
                     }).catch(e => {
-                        document.title = "binancestake";
+                        document.title = "royalbnb";
                         self.overlay.remove = 0;
                     });
                 } else { console.log("Please connect to wallet!"); }
