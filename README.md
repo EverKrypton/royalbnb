@@ -1,2 +1,1 @@
-# royalbnb
- 
+# Website Dapp for RoyalBNB Ecosystem
