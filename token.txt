@@ -1,0 +1,13 @@
+INTRODUCCION A ROYAL BNB TOKEN
+
+Royal BNB es un nuevo token basado en la red BSC que se va a lanzar en el DEX PancakeSwap. Este token tiene un suministro total de 10 millones. Su principal característica es que recompensa a sus Holders con Binance Coin (BNB) en función del porcentaje del suministro total que tengan en su billetera.
+
+Por ejemplo, si tienes el 1% del suministro total de Royal BNB en tu billetera, recibirás una recompensa en BNB proporcional a esa cantidad. Esto significa que cuanto más Royal BNB tengas y retengas, mayores serán las recompensas en BNB que recibirás a lo largo del tiempo.
+
+Para ser elegible para las recompensas, los titulares de Royal BNB deben participar en el sistema de staking del proyecto. El staking es una función que permite bloquear tus tokens en una billetera específica para apoyar la seguridad y el funcionamiento de la red. Al hacerlo, también te habilita para recibir las recompensas mencionadas anteriormente.
+
+Además de las recompensas por mantener y hacer staking de Royal BNB, este token tendrá otras utilidades en el ecosistema del proyecto. Podrá ser utilizado como moneda en su propio exchange (plataforma de intercambio) para negociar con otros activos digitales. Además, Royal BNB podrá utilizarse como tarifa de intercambio en transacciones cross-chain entre las redes Binance Smart Chain (BNB) y TRON (TRX). Esto brinda a los titulares de Royal BNB más oportunidades para utilizar y beneficiarse de su participación en el proyecto.
+
+Es importante destacar que, debido a su lanzamiento en PancakeSwap, las operaciones de compra y venta de Royal BNB pueden estar sujetas a un deslizamiento o slippage del 5/5%, lo que significa que podría haber una variación de precio en las transacciones debido a la volatilidad del mercado.
+
+En resumen, Royal BNB es un token con un suministro total de 10 millones que recompensa a sus titulares con BNB basado en el porcentaje del suministro que posean. Para obtener las recompensas, los titulares deben hacer staking en el sistema activo y en línea. El token también tendrá varias utilidades, como su uso en el exchange del proyecto y como tarifa para intercambios cross-chain entre las redes BNB y TRX.
