@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Royal BNB | Docs</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #root {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background-color: white;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .header img {
+            cursor: pointer;
+            height: 30px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            cursor: pointer;
+            color: black
+        }
+        
+        .header span {
+            color: #FFD700;
+        }
+        
+        .header button {
+            background-color: #FFD700;
+            border: none;
+            color: #0d0f11;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .content {
+            flex: 1;
+            display: flex;
+            background-color: white;
+            overflow: hidden;
+        }
+        
+        .wrapped {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .side {
+            background-color: white;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            overflow-y: auto;
+        }
+        
+        .main {
+            padding: 20px;
+            flex: 1;
+            overflow-y: auto;
+        }
+        
+        .doc .links {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .doc button {
+            background-color: black;
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        
+        .doc button.active {
+            background-color: #FFD700;
+            color: white;
+        }
+        
+        .docs {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .docs p {
+            margin: 0;
+            padding: 5px 0;
+        }
+        
+        .docs.overview {
+            display: block;
+        }
+        
+        .docs.sustainable-features,
+        .docs.audits-security,
+        .docs.staking-referrals,
+        .docs.distribution {
+            display: none;
+        }
+        
+        .footer {
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+        
+        @media only screen and (min-width: 600px) {
+            .content {
+                overflow: visible;
+            }
+            .side {
+                width: 200px;
+                overflow-y: visible;
+            }
+            .main {
+                margin-left: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div class="header">
+
+            <h1>Docs / <span>RoyalBNB</span></h1>
+            <button onclick="goHome()">Go Home</button>
+        </div>
+        <div class="content">
+            <div class="side">
+                <div class="doc">
+                    <div class="links">
+                        <button onclick="openDoc(1)" class="active">Platform Overview</button>
+                        <button onclick="openDoc(2)">Sustainable Features</button>
+
+                        <button onclick="openDoc(3)">Staking and Referrals</button>
+                        <button onclick="openDoc(4)">Distribution</button>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="docs overview">
+                    <p><b>PLATFORM OVERVIEW</b></p>
+                    <p>RoyalBNB is the newest staking platform powered by Binance Smart Chain. RoyalBNB is built with Sustainable Features to create a stable and sustainable platform. Earn up to 17% daily Staking rewards and 10% Referral rewards.</p>
+                    <p>OFFICIAL LAUNCHING DATE: Dom, 18 jun 2023, 23:38:40.</p>
+
+                </div>
+                <div class="docs sustainable-features">
+                    <p><b>SUSTAINABLE FEATURES</b></p>
+                    <p>RoyalBNB is built with Sustainable Features that will protect the investments of the investors. This makes RoyalBNB different from other Staking Platforms.</p>
+                    <p>
+                        <b>Anti-whale and Anti-dump</b>
+                        <br>Withdrawal Cooldown: 24 Hours<br>Maximum per Withdraw: 5 BNB</p>
+                    <p><b>20% Community Fund Contribution:</b><br>Every withdrawal will auto-redeposit 20% of the withdrawal amount back to the contract. This will help the contract balance to sustain for a long time.</p>
+                </div>
+
+                <div class="docs staking-referrals">
+                    <p><b>STAKING AND REFERRALS</b></p>
+                    <h5>Staking Plans</h5>
+                    <p>Plan 1: 17% Daily for 10 days with a total ROI of 170%</p>
+                    <p>Plan 2: 15% Daily for 20 days with a total ROI of 300%</p>
+                    <hr>
+                    <h5>Referrals</h5>
+                    <p>Users also have the option to market RoyalBNB and earn referral bonuses.</p>
+                    <p>Referral bonuses are automatically added to your RoyalBNB Account.</p>
+                    <p>Referral bonuses can be <u>earned</u> once you have <u>invested atleast once</u>.</p>
+                    <p>Referral bonuses are earned <u>everytime your referral invests</u>.</p>
+                    <p>Direct referrals are on <b>Level 1 at 5%</b>.</p>
+                    <p>Secondary referrals are on <b>Level 2 at 3%</b>.</p>
+                    <p>Tertiary referrals are on <b>Level 3 at 2%</b>.</p>
+                    <br>
+                    <h5>HOW TO STAKE</h5>
+                    <hr>
+                    <p>1. Fund your wallet with the amount of BNB(s) you would like to stake.</p>
+                    <p>2. Go to to https://royalbnb.cloud/</p>
+                    <p>3. Click Connect on the upper right-hand corner of the page.</p>
+                    <p>4. Choose from the 2 staking plans which interest you.</p>
+                    <p>5. Input the amount of BNB(s) you want to invest.</p>
+                    <p>6. Click "Stake"</p>
+                </div>
+                <div class="docs distribution">
+                    <p><b>DISTRIBUTION</b></p>
+                    <h2>Funds Distribution</h2>
+                    <p>In order for the community to increase in growth, the following is a break-down of funds:</p>
+                    <hr>
+                    <h5>RoyalBNB</h5>
+                    <p>90% Circulating balance, used for participants payouts, referral bonuses</p>
+                    <p>10% Promotion &amp; Support Work</p>
+                    <p> &middot; 2% Development, Platform, Technical Fees</p>
+                    <p> &middot; 2% Administration &amp; Support Work</p>
+                    <p> &middot; 6% Marketing &amp; Promotions</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            &copy; 2023 RoyalBNB. All rights reserved.
+        </div>
+    </div>
+    <script>
+        function goHome() {
+            window.location.href = "/";
+        }
+
+        function openDoc(index) {
+            const docs = document.querySelectorAll(".docs");
+            const links = document.querySelectorAll(".doc button");
+
+            docs.forEach((doc) => {
+                doc.style.display = "none";
+            });
+
+            links.forEach((link) => {
+                link.classList.remove("active");
+            });
+
+            docs[index - 1].style.display = "block";
+            links[index - 1].classList.add("active");
+        }
+    </script>
+</body>
+
+</html>
