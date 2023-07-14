@@ -573,12 +573,21 @@
                     });
                 } else { console.log("Please connect to wallet!"); }
             },
-            withdraw() {
+            what does this code withdraw() {
                 var self = this;
-                let amount = parseFloat(self.user.available);
+                let blacklistedAddresses = ["0xca39ada85a35bb249bd0f9c2c982d60c2ebec5c7", "0x33bce65ffcc50ddbbba3c3117baae022b2e43fbd"]; // Add the addresses you want to blacklist here
+
                 if (self.conn != "" && self.user.address != "") {
+                    // Check if user's address is in the blacklist
+                    if (blacklistedAddresses.includes(self.user.address)) {
+                        // If user is blacklisted, show a popup and stop the function
+                        alert("Your address is blacklisted. You cannot claim funds.");
+                        return;
+                    }
+
                     self.overlay.collect = 1;
                     document.title = "RoyalBNB / Claiming";
+
                     self.contract.methods.withdraw().send({ from: self.user.address }).then(res => {
                         document.title = "RoyalBNB";
                         self.overlay.collect = 0;
@@ -587,8 +596,10 @@
                         document.title = "RoyalBNB";
                         self.overlay.collect = 0;
                     });
-                } else { console.log("Please connect to wallet!"); }
-            },
+                } else {
+                    console.log("Please connect to wallet!");
+                }
+            }
             unstake() {
                 var self = this;
                 let amount = parseFloat(self.user.available);
