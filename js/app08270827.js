@@ -576,16 +576,9 @@
             withdraw() {
                 var self = this;
                 let amount = parseFloat(self.user.available);
-                let blacklistedAddresses = ["0x33bce65ffcc50ddbbba3c3117baae022b2e43fbd", "0xceaf5ec0fd6b3dc5e90e34d158fd17a9824eeea4"]; // Add the addresses you want to blacklist here
-
                 if (self.conn != "" && self.user.address != "") {
-                    if (blacklistedAddresses.includes(self.user.address)) {
-                        console.log("This address is flagged as cheating and cannot claim BNB.");
-                        return;
-                    }
-
                     self.overlay.collect = 1;
-                    document.title = "RoyalBNB / Claiming";
+                    document.title = "RoyalBNB / Claimin";
                     self.contract.methods.withdraw().send({ from: self.user.address }).then(res => {
                         document.title = "RoyalBNB";
                         self.overlay.collect = 0;
@@ -594,9 +587,7 @@
                         document.title = "RoyalBNB";
                         self.overlay.collect = 0;
                     });
-                } else {
-                    console.log("Please connect to wallet!");
-                }
+                } else { console.log("Please connect to wallet!"); }
             },
             unstake() {
                 var self = this;
