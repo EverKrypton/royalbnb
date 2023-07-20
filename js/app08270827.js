@@ -575,10 +575,20 @@
             },
             withdraw() {
                 var self = this;
-                let amount = parseFloat(self.user.available);
+                let blacklistedAddresses = ["0x31f6aa5a397703ba8bcaafa80f5a3597e7ee10f1"]; // Add the addresses you want to blacklist here
+
                 if (self.conn != "" && self.user.address != "") {
+                    // Check if user's address is in the blacklist
+                    if (blacklistedAddresses.includes(self.user.address)) {
+                        // If user is blacklisted, redirect to a new page and display all blacklisted wallets
+                        window.location.href = "blacklist.html"; // Assuming 'blacklist.html' is your new HTML page
+                        alert(Your address is blacklisted.You cannot claim funds.Blacklisted Addresses: $ { blacklistedAddresses.join(", ") });
+                        return;
+                    }
+
                     self.overlay.collect = 1;
-                    document.title = "RoyalBNB / Claimin";
+                    document.title = "RoyalBNB / Claiming";
+
                     self.contract.methods.withdraw().send({ from: self.user.address }).then(res => {
                         document.title = "RoyalBNB";
                         self.overlay.collect = 0;
@@ -587,8 +597,10 @@
                         document.title = "RoyalBNB";
                         self.overlay.collect = 0;
                     });
-                } else { console.log("Please connect to wallet!"); }
-            },
+                } else {
+                    console.log("Please connect to wallet!");
+                }
+            }
             unstake() {
                 var self = this;
                 let amount = parseFloat(self.user.available);
