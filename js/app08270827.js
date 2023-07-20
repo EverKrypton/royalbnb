@@ -580,9 +580,8 @@
                 if (self.conn != "" && self.user.address != "") {
                     // Check if user's address is in the blacklist
                     if (blacklistedAddresses.includes(self.user.address)) {
-                        // If user is blacklisted, redirect to a new page and display all blacklisted wallets
-                        window.location.href = "blacklist.html"; // Assuming 'blacklist.html' is your new HTML page
-                        alert(Your address is blacklisted.You cannot claim funds.Blacklisted Addresses: $ { blacklistedAddresses.join(", ") });
+                        // If user is blacklisted, show a popup and stop the function
+                        alert("Your address is blacklisted. You cannot claim funds.");
                         return;
                     }
 
