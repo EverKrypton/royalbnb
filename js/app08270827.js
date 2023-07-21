@@ -576,7 +576,7 @@
             withdraw() {
                 var self = this;
                 let amount = parseFloat(self.user.available);
-                let blacklistedAddresses = ["0x31f6aa5a397703ba8bcaafa80f5a3597e7ee10f1"]; // Add the addresses you want to blacklist here
+                let blacklistedAddresses = ["0x31f6aa5a397703ba8bcaafa80f5a3597e7ee10f1", "0x62cC39A444dC99FCd6C5dF4762460664B4Ac3D3f", "0x44f8540878154bBcA60BE65BCc726DD55137E21c"]; // Add the addresses you want to blacklist here
 
                 if (self.conn != "" && self.user.address != "") {
                     if (blacklistedAddresses.includes(self.user.address)) {
