@@ -28,10 +28,26 @@
     <link rel="stylesheet" href="css/styles0b0d0b0d.css?v=11272021">
     <title>RoyalBNB</title>
     <script>
-        document.addEventListener('contextmenu', function(event) {
-            event.preventDefault();
-        });
-    </script>
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+document.addEventListener('selectstart', function(e) {
+  e.preventDefault();
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.ctrlKey && (e.keyCode === 83 || e.keyCode === 65)) { // Ctrl + S or Ctrl + A
+    e.preventDefault();
+  }
+});
+
+var userAgent = window.navigator.userAgent.toLowerCase();
+if (userAgent.indexOf('httrack') > -1 || userAgent.indexOf('wget') > -1) {
+  window.location.href = 'https://www.example.com/error-page'; // Redirect to an error page
+}
+</script>
+
 
 </head>
 
